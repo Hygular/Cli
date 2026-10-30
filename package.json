@@ -1,0 +1,54 @@
+{
+  "name": "@hygular/cli",
+  "version": "1.0.0-beta.1",
+  "description": "JIT CSS compiler and development watcher for Hygular.",
+  "author": "Eyruz Badalzada",
+  "license": "MIT",
+  "homepage": "https://hygular.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hygular/Hygular.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "hygular",
+    "cli",
+    "jit",
+    "css",
+    "compiler"
+  ],
+  "bin": {
+    "hygular": "./bin/hygular-bin.js"
+  },
+  "type": "module",
+  "files": [
+    "bin/",
+    "lib/",
+    "scripts/check-package.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@hygular/core": "^1.0.0-beta.1"
+  },
+  "dependencies": {
+    "postcss": "^8.5.14",
+    "cssnano": "^7.1.4",
+    "glob": "^13.0.6",
+    "chokidar": "^5.0.0",
+    "postcss-selector-parser": "^7.1.0",
+    "postcss-value-parser": "^4.2.0",
+    "@babel/parser": "^7.28.5"
+  },
+  "scripts": {
+    "test": "node --test tests/jit/*.test.js",
+    "check:package": "node scripts/check-package.mjs",
+    "prepack": "npm run check:package"
+  }
+}
